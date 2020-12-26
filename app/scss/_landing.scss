@@ -1,0 +1,86 @@
+.landing {
+  background-color: $bg-main;
+  min-height: 100vh;
+  position: relative;
+  > div {
+    min-height: 100vh;
+    position: relative;
+    > div {
+      max-width: 520px;
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      z-index: 100;
+      transform: translate(-0%, -50%);
+      @include breakpoints-down(medium) {
+        left: 10%;
+        transform: translate(-10%, -50%);
+      }
+      @include breakpoints-down(small) {
+        width: 100%;
+        padding: 10px;
+      }
+      > h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        color: $primary;
+        @include breakpoints-down(small) {
+          font-size: 2rem;
+        }
+      }
+      > P {
+        font-size: 1.125rem;
+        margin: 20px 0px;
+      }
+      > a {
+        display: inline-block;
+        background-color: $primary;
+        color: white;
+        padding: 18px 32px;
+        border-radius: 30px;
+        margin-top: 18px;
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+.landing::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: 1500px cover;
+  background-position: center bottom;
+  background-image: url("../../images/landing.png");
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+  @include breakpoints-down(medium) {
+    background-size: 100%;
+  }
+  @include breakpoints-down(small) {
+    background-size: 120%;
+  }
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-size: 1500px cover;
+  background-position: center bottom;
+  background-image: url("../../images/grass.png");
+  top: 60px;
+  right: 0px;
+  z-index: 15;
+  @include breakpoints-down(medium) {
+    background-size: 100%;
+  }
+  @include breakpoints-down(small) {
+    background-size: 120%;
+  }
+}
